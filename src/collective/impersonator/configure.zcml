@@ -1,0 +1,28 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n_domain="collective.impersonator">
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <genericsetup:importStep
+        name="impersonator"
+        title="Impersonator PAS plugin for portal managers"
+        description="Installs impersonator PAS plugin to allow
+                     portal managers to act as someone else."
+        handler=".plugins.configureImpersonatorPlugin"
+        i18n:attributes="title description"
+        />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="Impersonator"
+        directory="profiles/default"
+        description="Installs impersonator PAS plugin"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        i18n:attributes="title description"
+        />
+
+</configure>
