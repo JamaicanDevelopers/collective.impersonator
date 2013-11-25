@@ -46,7 +46,6 @@ class ImpersonatorPlugin(BasePlugin):
 
         # Read X-impersonate-header
         x_impersonate = request.getHeader('X-impersonate', None)
-        print x_impersonate
         if not x_impersonate:
             return None
 
