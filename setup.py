@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="collective.impersonator",
-    version='1.0.2.dev0',
+    version='1.0.2',
     description="Impersonator PAS plugin for portal managers",
     long_description=(open("README.txt").read() + "\n" +
                       open("CHANGES.txt").read()),
