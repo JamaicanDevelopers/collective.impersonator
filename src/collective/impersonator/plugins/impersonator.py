@@ -63,7 +63,10 @@ class ImpersonatorPlugin(BasePlugin):
             return None
 
         permissions = api.user.get_permissions(username=id_login_tuple[0])
-        if not 'Manage portal' in permissions:
+        try:
+            if not permissions.get('Manage portal'):
+                return None
+        except AttributeError:
             return None
 
         return (x_impersonate_user.getId(),
