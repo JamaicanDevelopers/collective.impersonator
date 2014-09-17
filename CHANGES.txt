@@ -4,8 +4,9 @@ Changelog
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fix issue where get_permissions was expected to return a list instead of
+  dictionary
+  [Asko Soukka]
 
 1.0.1 (2013-11-25)
 ------------------
